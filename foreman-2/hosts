@@ -1,0 +1,6 @@
+[ntp-server]
+zeus ansible_connection=local
+
+[webserver]
+potter
+manado
