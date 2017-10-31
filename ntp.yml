@@ -17,24 +17,6 @@
     - name: restart ntp
       service: name=ntp state=restarted
 
- - hosts: zinc
-   become: yes
-   tasks:
-    - name: Install NTP
-      apt: package=ntp state=present update_cache=no
-      tags: ntp
-    - name: Copy over the NTP configuration
-      copy: src=server/ntp-zinc.conf dest=/etc/ntp.conf
-      notify:
-       - restart ntp
-      tags: ntp
-    - name: Make sure NTP is started up
-      service: name=ntp state=started enabled=yes
-      tags: ntp
-   handlers:
-    - name: restart ntp
-      service: name=ntp state=restarted
-
  - hosts: webserver
    become: yes
    tasks:
