@@ -1,5 +1,6 @@
 [ntp-server]
 boron ansible_connection=local
+zinc
 
 [webserver]
 penelope
