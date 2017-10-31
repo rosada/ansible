@@ -3,7 +3,7 @@
    become: yes
    tasks:
     - name: Install NTP
-      apt: package=ntp state=present update_cache=yes
+      apt: package=ntp state=present update_cache=no
       tags: ntp
     - name: Copy over the NTP configuration
       copy: src=server/ntp.conf dest=/etc/ntp.conf
