@@ -55,8 +55,7 @@ venus
 stretch
 
 [monitoring]
-snowy
-gamera
+#gamera # -> no space left <-
 yogyakarta
 
 [db-archive]

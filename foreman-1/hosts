@@ -65,6 +65,9 @@ hyperion
 selenium
 #fluorin # -> unreachable via PXE network <-
 
+[monitoring]
+snowy
+
 [db-master]
 arsenic
 manganese
