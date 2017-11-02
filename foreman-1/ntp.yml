@@ -17,7 +17,7 @@
     - name: restart ntp
       service: name=ntp state=restarted
 
- - hosts: webserver
+ - hosts: webserver:solr
    become: yes
    tasks:
     - name: Install NTP
