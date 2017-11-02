@@ -7,11 +7,11 @@ potter
 manado
 snape
 bellatrix
-voldemort
-pontianak
-jayapura
+voldemort ansible_python_interpreter=/usr/bin/python3
+pontianak ansible_python_interpreter=/usr/bin/python3
+jayapura ansible_python_interpreter=/usr/bin/python3
 samarinda
-cedric
+cedric ansible_python_interpreter=/usr/bin/python3
 bathilda
 gilderoy
 quirrell
