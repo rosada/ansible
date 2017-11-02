@@ -64,3 +64,13 @@ lathanum
 hyperion
 selenium
 #fluorin # -> unreachable via PXE network <-
+
+[db-master]
+arsenic
+manganese
+
+[db-replica]
+barium
+chromium
+magnesium
+scandium # -> replica not running <-
