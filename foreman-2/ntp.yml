@@ -1,6 +1,7 @@
 ---
  - hosts: ntp-server
    become: yes
+   gather_facts: false
    tasks:
     - name: Install NTP
       apt: package=ntp state=present update_cache=no
@@ -19,6 +20,7 @@
 
  - hosts: webserver
    become: yes
+   gather_facts: false
    tasks:
     - name: Install NTP
       apt: package=ntp state=present update_cache=no
