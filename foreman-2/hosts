@@ -22,3 +22,18 @@ doraemon
 endymion
 jupiter
 pokemon
+
+[solr]
+diamond ansible_python_interpreter=/usr/bin/python3
+zircon ansible_python_interpreter=/usr/bin/python3
+minerva
+malfoy
+songoku
+fatso 
+michiel
+petruk 
+brussel ansible_python_interpreter=/usr/bin/python3
+andora ansible_python_interpreter=/usr/bin/python3
+luxemburg ansible_python_interpreter=/usr/bin/python3
+dublin ansible_python_interpreter=/usr/bin/python3
+gibraltar ansible_python_interpreter=/usr/bin/python3
