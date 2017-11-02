@@ -52,3 +52,15 @@ chlorine
 
 [redis]
 radium
+
+[riak]
+dropadi
+ferrum
+gold
+sara
+titanium
+helium
+lathanum
+hyperion
+selenium
+#fluorin # -> unreachable via PXE network <-

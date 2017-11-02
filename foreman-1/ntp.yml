@@ -18,7 +18,7 @@
     - name: restart ntp
       service: name=ntp state=restarted
 
- - hosts: webserver:solr:loadbalancer:mail:redis
+ - hosts: webserver:solr:loadbalancer:mail:redis:riak
    become: yes
    gather_facts: false
    tasks:
