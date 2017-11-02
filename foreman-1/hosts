@@ -41,8 +41,14 @@ copper
 dikkiedik
 
 [loadbalancer]
-#silicon
+#silicon # -> unreachable via PXE network <-
 pacman
 merbabu
 germanium
 aluminum
+
+[mail]
+chlorine
+
+[redis]
+radium

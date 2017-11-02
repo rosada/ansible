@@ -37,3 +37,12 @@ andora ansible_python_interpreter=/usr/bin/python3
 luxemburg ansible_python_interpreter=/usr/bin/python3
 dublin ansible_python_interpreter=/usr/bin/python3
 gibraltar ansible_python_interpreter=/usr/bin/python3
+
+[memcache]
+bandung
+
+[redis]
+slytherin
+hogwarts
+ravenclaw
+hufflepuff
