@@ -25,6 +25,7 @@ nakula
 sadewa
 magda
 alice
+stinkie
 
 [solr]
 helios
@@ -38,3 +39,10 @@ silver
 bashful
 copper
 dikkiedik
+
+[loadbalancer]
+silicon
+pacman
+merbabu
+germanium
+aluminium
