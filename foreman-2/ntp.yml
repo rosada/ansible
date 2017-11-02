@@ -18,7 +18,7 @@
     - name: restart ntp
       service: name=ntp state=restarted
 
- - hosts: webserver
+ - hosts: webserver:solr
    become: yes
    gather_facts: false
    tasks:
