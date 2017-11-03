@@ -1,22 +1,37 @@
 ---
-- name: Create rosada
-  hosts: define_server
+- name: Create User on list
+  hosts: client
   become: yes
   tasks:
-    - name: Create rosada
+    - name: Create user
       user:
-        name: rosada
+        name: "{{ item }}"
+      with_items:
+        - rosada
+        - jefry
+        - heri
+ 
     - name: Create .ssh folder
       file:
-        path: ~rosada/.ssh
+        path: ~{{ item }}/.ssh
         state: directory
-        owner: rosada
-        group: rosada
+        owner: "{{ item }}"
+        group: "{{ item }}"
         mode: 0700
+      with_items:
+        - rosada
+        - jefry
+        - heri
     - name: Upload SSH key
       copy:
-        src: key/id_rsa_rosada.pub
-        dest: ~rosada/.ssh/authorized_keys
-        owner: rosada
-        group: rosada
+        src: key/id_rsa_{{ item }}.pub
+        dest: ~{{ item }}/.ssh/authorized_keys
+        owner: "{{ item }}"
+        group: "{{ item }}"
         mode: 0700
+   
+      with_items:
+        - rosada
+        - jefry
+        - heri
+
