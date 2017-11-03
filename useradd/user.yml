@@ -1,0 +1,22 @@
+---
+- name: Create rosada
+  hosts: define_server
+  become: yes
+  tasks:
+    - name: Create rosada
+      user:
+        name: rosada
+    - name: Create .ssh folder
+      file:
+        path: ~rosada/.ssh
+        state: directory
+        owner: rosada
+        group: rosada
+        mode: 0700
+    - name: Upload SSH key
+      copy:
+        src: key/id_rsa_rosada.pub
+        dest: ~rosada/.ssh/authorized_keys
+        owner: rosada
+        group: rosada
+        mode: 0700
