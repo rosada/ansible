@@ -2,15 +2,16 @@
 - name: Create User on list
   hosts: client
   become: yes
+  vars:
+    list:
+       - rosada
+       - jefry
+       - heri
   tasks:
     - name: Create user
       user:
         name: "{{ item }}"
-      with_items:
-        - rosada
-        - jefry
-        - heri
- 
+      with_items: "{{ list }}"
     - name: Create .ssh folder
       file:
         path: ~{{ item }}/.ssh
@@ -18,10 +19,7 @@
         owner: "{{ item }}"
         group: "{{ item }}"
         mode: 0700
-      with_items:
-        - rosada
-        - jefry
-        - heri
+      with_items: "{{ list }}"
     - name: Upload SSH key
       copy:
         src: key/id_rsa_{{ item }}.pub
@@ -29,9 +27,4 @@
         owner: "{{ item }}"
         group: "{{ item }}"
         mode: 0700
-   
-      with_items:
-        - rosada
-        - jefry
-        - heri
-
+      with_items: "{{ list }}"
