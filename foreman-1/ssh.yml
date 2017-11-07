@@ -1,5 +1,5 @@
 ---
- - hosts: boron
+ - hosts: boron:riak
    become: yes
    gather_facts: false
    tasks:
