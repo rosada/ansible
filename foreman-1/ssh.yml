@@ -1,0 +1,19 @@
+---
+ - hosts: boron
+   become: yes
+   gather_facts: false
+   tasks:
+    - name: Ensure SSH installed
+      apt: package=openssh-server state=present update_cache=no
+      tags: openssh-server
+    - name: Copy over the SSH configuration
+      copy: src=server/sshd_config dest=/etc/ssh/sshd_config
+      notify:
+       - restart openssh-server
+      tags: openssh-server
+    - name: Make sure SSH is started up
+      service: name=ssh state=started enabled=yes
+      tags: openssh-server
+   handlers:
+    - name: restart openssh-server
+      service: name=ssh state=restarted
