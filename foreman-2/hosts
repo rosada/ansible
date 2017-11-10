@@ -95,11 +95,11 @@ padang
 madrid
 
 [others]
-lisbon
-paris
-monaco
-saint
-vaduz
-berlin
-budapest
-bratislava
+lisbon ansible_python_interpreter=/usr/bin/python3
+paris ansible_python_interpreter=/usr/bin/python3
+monaco ansible_python_interpreter=/usr/bin/python3
+saint ansible_python_interpreter=/usr/bin/python3
+vaduz ansible_python_interpreter=/usr/bin/python3
+berlin ansible_python_interpreter=/usr/bin/python3
+budapest ansible_python_interpreter=/usr/bin/python3
+bratislava ansible_python_interpreter=/usr/bin/python3
