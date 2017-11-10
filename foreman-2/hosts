@@ -92,7 +92,7 @@ medan
 
 [loadbalancer]
 padang
-madrid
+madrid ansible_python_interpreter=/usr/bin/python3
 
 [others]
 lisbon ansible_python_interpreter=/usr/bin/python3
