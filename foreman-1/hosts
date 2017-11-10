@@ -87,3 +87,6 @@ magnesium
 
 [db-others]
 scandium # -> replica not running <-
+
+[others]
+apollo
