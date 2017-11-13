@@ -1,0 +1,20 @@
+---
+ - name: Create User on list
+   hosts: client
+   become: yes
+   vars:
+     list:
+        - arifrosada
+   tasks:
+     - name: Create user
+       user:
+         name: "{{ item }}"
+       with_items: "{{ list }}"
+     - name: Create .ssh folder
+       file:
+         path: ~{{ item }}/.ssh
+         state: directory
+         owner: "{{ item }}"
+         group: "{{ item }}"
+         mode: 0750
+       with_items: "{{ list }}"
