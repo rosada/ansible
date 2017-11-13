@@ -1,0 +1,31 @@
+---
+ - hosts: all:!zeus
+   become: yes
+   gather_facts: false
+   vars:
+     list:
+        - arifrosada
+        - jefry
+        - heriyanto
+   tasks:
+     - name: Create user
+       user:
+         name: "{{ item }}"
+         shell: /bin/bash
+       with_items: "{{ list }}"
+     - name: Create .ssh folder
+       file:
+         path: ~{{ item }}/.ssh
+         state: directory
+         owner: "{{ item }}"
+         group: "{{ item }}"
+         mode: 0750
+       with_items: "{{ list }}"
+     - name: Upload SSH key
+       copy:
+         src: ~{{ item }}/.ssh/id_rsa.pub
+         dest: ~{{ item }}/.ssh/authorized_keys
+         owner: "{{ item }}"
+         group: "{{ item }}"
+         mode: 0700
+       with_items: "{{ list }}"
