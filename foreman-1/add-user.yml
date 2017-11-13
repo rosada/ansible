@@ -18,3 +18,11 @@
          group: "{{ item }}"
          mode: 0750
        with_items: "{{ list }}"
+     - name: Upload SSH key
+       copy:
+         src: ~{{ item }}/.ssh/id_rsa.pub
+         dest: ~{{ item }}/.ssh/authorized_keys
+         owner: "{{ item }}"
+         group: "{{ item }}"
+         mode: 0700
+       with_items: "{{ list }}"
