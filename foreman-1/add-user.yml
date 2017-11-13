@@ -1,7 +1,8 @@
 ---
  - name: Create User on list
-   hosts: client
+   hosts: all:!boron
    become: yes
+   gather_facts: false
    vars:
      list:
         - arifrosada
