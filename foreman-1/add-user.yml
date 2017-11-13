@@ -1,11 +1,11 @@
 ---
- - name: Create User on list
-   hosts: all:!boron
+ - hosts: all:!boron
    become: yes
    gather_facts: false
    vars:
      list:
         - arifrosada
+        - jefry
    tasks:
      - name: Create user
        user:
