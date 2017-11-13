@@ -9,6 +9,7 @@
      - name: Create user
        user:
          name: "{{ item }}"
+         shell: /bin/bash
        with_items: "{{ list }}"
      - name: Create .ssh folder
        file:
