@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: all:!silicon
    become: yes
    gather_facts: false
    tasks:

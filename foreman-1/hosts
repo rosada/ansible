@@ -49,7 +49,7 @@ copper
 dikkiedik
 
 [loadbalancer]
-#silicon # -> unreachable via PXE network, using internal network instead <-
+silicon # -> unreachable via PXE network, using internal network instead <-
 pacman
 merbabu
 germanium
