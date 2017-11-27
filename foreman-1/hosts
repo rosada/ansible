@@ -7,7 +7,6 @@ zinc
 calcium
 carbon
 cerium
-lapetus
 nitrogen
 oxygen
 potassium
@@ -15,7 +14,6 @@ sodium
 sulfur
 #themis # -> hardware failure at Nov 24th <-
 vanadium
-phoebe
 merapi
 gatotkaca
 arjuna
@@ -34,6 +32,10 @@ azrael
 donald
 greg
 oscar
+
+[memcache]
+phoebe
+lapetus
 
 [solr]
 helios
