@@ -7,6 +7,10 @@
         - arifrosada
         - jefry
         - heriyanto
+        - wvoliveros
+        - mbianco
+        - rpong
+        - jacob
    tasks:
      - name: Create user
        user:
