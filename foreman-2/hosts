@@ -3,6 +3,7 @@ zeus ansible_connection=local
 ares
 
 [webserver]
+development
 potter
 manado
 snape
