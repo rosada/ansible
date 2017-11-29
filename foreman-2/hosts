@@ -104,3 +104,5 @@ madrid ansible_python_interpreter=/usr/bin/python3
 lisbon ansible_python_interpreter=/usr/bin/python3
 paris ansible_python_interpreter=/usr/bin/python3
 monaco ansible_python_interpreter=/usr/bin/python3
+amsterdam
+bern
