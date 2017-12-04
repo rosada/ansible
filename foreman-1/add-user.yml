@@ -4,32 +4,33 @@
    gather_facts: false
    vars:
      list:
-        - arifrosada
-        - jefry
-        - heriyanto
-        - wvoliveros
-        - mbianco
-        - rpong
-        - jacob
+        - { name: 'arifrosada', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'jefry', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'heriyanto', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'wvoliveros', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'mbianco', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'rpong', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'jacob', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
    tasks:
      - name: Create user
        user:
-         name: "{{ item }}"
+         name: "{{ item.name }}"
+         #password: "{{ item.pass }}"
          shell: /bin/bash
        with_items: "{{ list }}"
      - name: Create .ssh folder
        file:
-         path: ~{{ item }}/.ssh
+         path: ~{{ item.name }}/.ssh
          state: directory
-         owner: "{{ item }}"
-         group: "{{ item }}"
+         owner: "{{ item.name }}"
+         group: "{{ item.name }}"
          mode: 0750
        with_items: "{{ list }}"
      - name: Upload SSH key
        copy:
-         src: ~{{ item }}/.ssh/id_rsa.pub
-         dest: ~{{ item }}/.ssh/authorized_keys
-         owner: "{{ item }}"
-         group: "{{ item }}"
+         src: ~{{ item.name }}/.ssh/id_rsa.pub
+         dest: ~{{ item.name }}/.ssh/authorized_keys
+         owner: "{{ item.name }}"
+         group: "{{ item.name }}"
          mode: 0700
        with_items: "{{ list }}"
