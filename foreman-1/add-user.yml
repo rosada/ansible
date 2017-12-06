@@ -11,6 +11,7 @@
         - { name: 'mbianco', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
         - { name: 'rpong', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
         - { name: 'jacob', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
+        - { name: 'cesar.prieto', pass: 'DUMMY_PASSWORD_CHANGE_ME' }
    tasks:
      - name: Create user
        user:
