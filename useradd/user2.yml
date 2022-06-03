@@ -1,0 +1,36 @@
+name: Create User on list
+  hosts: client
+  become: yes
+  vars:
+    list:
+       - rosada
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ item }}"
+        shell: /bin/bash
+        groups: sudo
+        #append: yes
+      with_items: "{{ list }}"
+    - name: Create .ssh folder
+      file:
+        path: ~{{ item }}/.ssh
+        state: directory
+        owner: "{{ item }}"
+        group: "{{ item }}"
+        mode: 0700
+      with_items: "{{ list }}"
+    - name: Upload SSH key
+      copy:
+        src: ./key/id_rsa_{{ item }}.pub
+        dest: ~{{ item }}/.ssh/authorized_keys
+        owner: "{{ item }}"
+        group: "{{ item }}"
+        mode: 0700
+      with_items: "{{ list }}"
+    - name: Ensuring that sudo is able to use sudo without password
+      lineinfile:
+        path: /etc/sudoers
+        regexp: '^%sudo'
+        line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
